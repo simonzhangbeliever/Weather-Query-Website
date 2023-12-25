@@ -1,6 +1,15 @@
-html {
+html, body {
     background-color: rgb(255, 255, 255);
-    
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
 }
 
 .container-fluid {
@@ -112,5 +121,9 @@ h1 {
 
 .error {
     font-size: 5rem;
+    text-align: center;
+}
+
+footer {
     text-align: center;
 }
