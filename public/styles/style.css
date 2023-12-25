@@ -1,0 +1,116 @@
+html {
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center !important;
+    margin: 20px;
+    
+}
+
+input,button {
+    box-shadow: 5px 5px 10px black;
+}
+
+.main {
+    width: 30%;
+    background-color: beige;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 1px;
+    box-shadow: 5px 5px 10px black;
+}
+
+
+form {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-bottom: 0 !important;
+}
+
+.local-time {
+    padding-left: 20px;
+    color: grey;
+}
+
+
+.current-temp {
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+#weather-image {
+    width: 50%;
+    display: flex;
+    flex-shrink: 1;
+    background-color: rgb(209, 209, 146);
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.normal-details {
+    margin-left: 150px;
+    display: grid;
+    grid-template-columns: 80px 80px;
+    grid-template-rows: 50px 50px;
+    row-gap: 40px;
+    column-gap: 70px;
+
+}
+
+.normal-details p {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.normal-details .number {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.normal-details .description {
+    color: grey;
+}
+
+.more-details { 
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-content: space-around;
+    row-gap: 10px;
+    background-color: bisque;
+    border-radius: 15px;
+    margin: 15px 15px;
+}
+.more-details p { 
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.more-details .number {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.more-details .description {
+    color: grey;
+}
+
+.enter-location {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.error {
+    font-size: 5rem;
+    text-align: center;
+}

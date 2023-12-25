@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Work Sans', sans-serif;">
+    <div class="container-fluid">
+        <form action="/Search" class="d-flex" role="search" method="post">
+        <input class="form-control me-2" name="location" type="text" placeholder="City/Town..." aria-label="Search" required>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+
+    <% if (!locals.error) { %>
+        <% if (locals.weather) { %>
+            <div class="main">
+                <div>
+                    <h1 class="city-name"><%= city %></h1>
+                    <p class="local-time"><%= time %></p>
+                </div>
+                
+                <div id="weather-image">
+                    <div class="weather-image">
+                        <img src=<%= weatherImg %> alt="current weather img" height="150px" />
+                    </div>
+                    <div class="weather-description" style="text-align: center;">
+                        <p class="current-temp"><%= weather.current.temperature_2m %><%= weather.current_units.temperature_2m %></p>
+                        <p><%= weatherDesc %></p>
+                    </div>   
+                    
+                    <div class="normal-details">
+                        <div>
+                            <p class="number"><%= weather.daily.temperature_2m_max %><%= weather.daily_units.temperature_2m_max %></p>
+                            <p class="description">Highest</p>
+                        </div>
+                        <div>
+                            <p class="number"><%= sunriseTime %></p>
+                            <p class="description">Sunrise</p>
+                        </div>
+                        <div>
+                            <p class="number"><%= weather.daily.temperature_2m_min %><%= weather.daily_units.temperature_2m_min %></p>
+                            <p class="description">Lowest</p>
+                        </div>
+                        <div>
+                            <p class="number"><%= sunsetTime %></p>
+                            <p class="description">Sunset</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="more-details">
+                    <div>
+                        <p class="number"><%= weather.current.relative_humidity_2m %><%= weather.current_units.relative_humidity_2m %><p>
+                        <p class="description">Humidity</p>
+                    </div>
+                    <div>
+                        <p class="number"><%= weather.current.rain %><%= weather.current_units.rain %><p>
+                        <p class="description">Rain</p>
+                    </div>
+                    <div>
+                        <p class="number"><%= weather.current.cloud_cover %><%= weather.current_units.cloud_cover %><p>
+                        <p class="description">Cloud</p>
+                    </div>
+                    <div>
+                        <p class="number"><%= weather.current.pressure_msl %><%= weather.current_units.pressure_msl %><p>
+                        <p class="description">Pressure</p>
+                    </div>
+                    <div>
+                        <p class="number"><%= weather.current.wind_speed_10m %><%= weather.current_units.wind_speed_10m %><p>
+                        <p class="description">Wind</p>
+                    </div>
+                    <div>
+                        <p class="number"><%= weather.daily.uv_index_max %><%= weather.daily_units.uv_index_max %><p>
+                        <p class="description">UV Index</p>
+                    </div>
+    
+                </div>
+            </div>
+            
+        <% } else { %>
+            <p class="enter-location">Enter your location</p>
+        <% } %>
+    <% } else { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+</body>
+</html>
