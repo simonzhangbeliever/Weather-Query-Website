@@ -7,7 +7,7 @@ trigger:
 - master
 
 variables:
-  uniName: 'weather'
+  uiName: 'weather'
 
 pool:
   name: Ubuntu-aws
